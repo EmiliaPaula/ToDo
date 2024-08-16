@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="61370e3dc308d2101b291dd1b40131c6" label="To Do" max_length="40" name="x_1341390_todo_to_do" type="collection">
+        <element label="Atribuído a" max_length="32" name="atribuido_a" reference="sys_user" type="reference"/>
+        <element label="Data de Vencimento" max_length="40" name="data_de_vencimento" type="glide_date"/>
+        <element label="Enviar Lembrete" max_length="40" name="enviar_lembrete" type="boolean"/>
+        <element default="importante" label="Importância" max_length="40" name="importancia" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Não é Importante" sequence="0" value="n_o_importante"/>
+                <element inactive_on_update="false" label="Importante" sequence="1" value="importante"/>
+                <element inactive_on_update="false" label="Muito Importante" sequence="2" value="muito_importante"/>
+            </choice>
+        </element>
+        <element display="true" label="Item para fazer" max_length="150" name="item_para_fazer" type="string"/>
+        <element default="n_o_iniciado" label="Progresso" max_length="40" name="progresso" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Não Iniciado" sequence="0" value="n_o_iniciado"/>
+                <element inactive_on_update="false" label="Em andamento" sequence="1" value="em_andamento"/>
+                <element inactive_on_update="false" label="Feito" sequence="2" value="feito"/>
+                <element inactive_on_update="false" label="Cancelado" sequence="3" value="cancelado"/>
+            </choice>
+        </element>
+        <element label="Projeto" max_length="32" name="projeto" reference="x_1341390_todo_projeto_para_fazer" type="reference"/>
+        <index name="index">
+            <element name="atribuido_a"/>
+        </index>
+        <index name="index2">
+            <element name="projeto"/>
+        </index>
+    </element>
+</database>
